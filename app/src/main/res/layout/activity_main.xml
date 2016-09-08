@@ -149,7 +149,8 @@
                 android:text="@string/report"
                 android:id="@+id/button"
                 android:layout_gravity="bottom|center_horizontal"
-                android:background="#ff0000" />
+                android:background="#ff0000"
+                android:enabled="true" />
         </LinearLayout>
 
     </LinearLayout>
