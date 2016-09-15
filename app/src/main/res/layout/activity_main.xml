@@ -144,13 +144,10 @@
             </ScrollView>
 
             <Button
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                style="@style/DefaultButton"
                 android:text="@string/report"
                 android:id="@+id/button"
-                android:layout_gravity="bottom|center_horizontal"
-                android:background="#ff0000"
-                android:enabled="true" />
+                android:layout_gravity="bottom|center_horizontal" />
         </LinearLayout>
 
     </LinearLayout>
