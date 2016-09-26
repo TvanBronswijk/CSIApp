@@ -12,11 +12,11 @@
     android:weightSum="1"
     android:background="#474747">
 
-    <ImageView
-        android:layout_width="match_parent"
+    <ImageView style="@style/ImageCriminal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:src="@drawable/lexmond"
         android:contentDescription="@string/liekevanlexmond" />
 
