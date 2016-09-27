@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,35 +9,38 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="school.csiapp.MainActivity"
     android:weightSum="1"
-    android:background="#474747">
-
-    <ImageView style="@style/ImageCriminal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_gravity="center"
-        android:src="@drawable/lexmond"
-        android:contentDescription="@string/liekevanlexmond" />
+    android:background="#474747"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="1">
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_gravity="center"
+            android:src="@drawable/lexmond"
+            android:contentDescription="@string/liekevanlexmond"
+            android:layout_width="200dp"
+            android:adjustViewBounds="false"
+            android:layout_weight="1"
+            android:layout_height="200dp" />
 
         <TableLayout
-            android:layout_width="168dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:background="#962f2f">
+                android:layout_height="wrap_content"
+                android:background="#962f2f"
+                android:layout_gravity="center_horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/name"
                     android:id="@+id/LabelName"
@@ -51,7 +53,8 @@
                     android:text="@string/lieke"
                     android:id="@+id/Name"
                     android:textSize="22dp"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    android:gravity="right" />
 
             </TableRow>
 
@@ -74,7 +77,8 @@
                     android:text="@string/female"
                     android:id="@+id/Sex"
                     android:textSize="22dp"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    android:gravity="right" />
             </TableRow>
 
             <TableRow
@@ -96,11 +100,12 @@
                     android:text="@string/_40"
                     android:id="@+id/Age"
                     android:textSize="22dp"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    android:gravity="right" />
             </TableRow>
 
             <TableRow
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="#962f2f">
 
@@ -118,38 +123,46 @@
                     android:text="@string/_50_000"
                     android:id="@+id/Bounty"
                     android:textSize="22dp"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    android:gravity="right" />
             </TableRow>
 
         </TableLayout>
+    </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="206dp"
+        android:id="@+id/scrollView"
+        android:layout_gravity="bottom|center_horizontal" >
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:text="@string/NavySeals"
+            android:id="@+id/Details"
+            android:background="@android:color/holo_green_dark"
+            android:gravity="center_horizontal|center"
+            android:layout_height="wrap_content" />
+    </ScrollView>
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="250sp"
-                android:id="@+id/scrollView"
-                android:layout_gravity="bottom|center_horizontal" >
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CrimesList" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/NavySeals"
-                    android:id="@+id/Details"
-                    android:background="@android:color/holo_green_dark" />
-            </ScrollView>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
-            <Button
-                style="@style/DefaultButton"
-                android:text="@string/report"
-                android:id="@+id/button"
-                android:layout_gravity="bottom|center_horizontal" />
-        </LinearLayout>
-
+        <Button
+            style="@style/DefaultButton"
+            android:text="@string/report"
+            android:id="@+id/button"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="match_parent" />
     </LinearLayout>
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.csi;
+package school.csiapp;
 
 public class Crime {
 

@@ -16,22 +16,19 @@ public class CriminalListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_criminal_list);
 
+        CriminalProvider CP = new CriminalProvider(this);
+        CriminalListAdapter CLA = new CriminalListAdapter(this, CP.GetCriminals());
+
         ListView lv = (ListView)findViewById(R.id.listview1);
 
-        final String[] criminals = getResources().getStringArray(R.array.names);
 
-        lv.setAdapter(
-                new ArrayAdapter<String>(this,
-                        android.R.layout.simple_list_item_1,
-                        criminals)
-        );
+        lv.setAdapter(CLA);
+
 
         lv.setOnItemClickListener(new OnItemClickListener(){
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                String name = criminals[position];
-
                 Intent intent = new Intent(CriminalListActivity.this, MainActivity.class);
-                intent.putExtra("name", name);
+                intent.putExtra("criminal", position);
                 startActivity(intent);
             }
         });

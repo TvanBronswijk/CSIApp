@@ -1,11 +1,9 @@
-package com.example.csi;
+package school.csiapp;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-
-import com.example.csi.R;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -55,7 +53,7 @@ public class CriminalProvider{
 	
 	/**
 	 * Get a specific criminal 
-	 * @param the index of the criminal in the list
+	 * @param index of the criminal in the list
 	 * @return the criminal
 	 */
 	public Criminal GetCriminal(int index) {

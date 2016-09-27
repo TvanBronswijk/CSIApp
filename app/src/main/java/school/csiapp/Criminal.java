@@ -1,4 +1,4 @@
-package com.example.csi;
+package school.csiapp;
 
 import java.util.ArrayList;
 
