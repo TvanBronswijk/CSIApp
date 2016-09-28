@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         CriminalProvider CP = new CriminalProvider(this);
-        Criminal SelectedCriminal = CP.GetCriminal(getIntent().getIntExtra("criminal", 0));
+        final int index = getIntent().getIntExtra("criminal", 0);
+        Criminal SelectedCriminal = CP.GetCriminal(index);
 
         ImageView IM = (ImageView)findViewById(R.id.imageView) ;
         IM.setImageDrawable(SelectedCriminal.mugshot);
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               Intent intent = new Intent(MainActivity.this, ReportActivity.class);
+                intent.putExtra("criminal", index);
                 startActivity(intent);
             }
         });
