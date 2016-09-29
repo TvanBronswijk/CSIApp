@@ -32,10 +32,11 @@ public class ReportActivity extends AppCompatActivity {
 
         final LocationManager LM = (LocationManager) getSystemService(LOCATION_SERVICE);
 
+        final LocationListener LL = new MyLocationListener(this, selected.lastKnownLocation);
+
         sca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LocationListener LL = new MyLocationListener(getApplicationContext(), selected.lastKnownLocation);
                 if(sca.isChecked()){
                     if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                         // TODO: Consider calling
@@ -47,7 +48,7 @@ public class ReportActivity extends AppCompatActivity {
                         // for ActivityCompat#requestPermissions for more details.
                         return;
                     }
-                    LM.requestLocationUpdates(GPS_PROVIDER, 350, 10, LL);
+                    LM.requestLocationUpdates(GPS_PROVIDER, 35, 1, LL);
                 }else{
                     LM.removeUpdates(LL);
                 }
@@ -78,7 +79,7 @@ public class ReportActivity extends AppCompatActivity {
 
         @Override
         public void onLocationChanged(Location locFromGps) {
-            if(locFromGps.distanceTo(LastKnown) < 10000000000000000000000000000000000000f){
+            if(locFromGps.distanceTo(LastKnown) < 10000000000000f){
                 Toast.makeText(context, "He's close!", Toast.LENGTH_LONG).show();
 
 
